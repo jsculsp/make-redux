@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import Header from './containers/Header'
-import Content from './Content'
+import Content from './containers/Content'
 import './index.css'
 
 function themeReducer(state, action) {
