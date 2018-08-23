@@ -8,13 +8,19 @@ export default class Content extends Component {
     onSwitchColor: PropTypes.func,
   }
 
+  handleSwitchColor(color) {
+    if (this.props.onSwitchColor) {
+      this.props.onSwitchColor(color)
+    }
+  }
+
   render() {
     return (
       <div>
         <p style={{color: this.props.themeColor}}>React.js 小书内容</p>
         <ThemeSwitch
           themeColor={this.props.themeColor}
-          onSwitchColor={this.props.onSwitchColor}
+          onSwitchColor={this.handleSwitchColor.bind(this)}
         />
       </div>
     )
