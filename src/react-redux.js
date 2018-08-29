@@ -21,13 +21,13 @@ export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponen
     _updateProps() {
       const {store} = this.context
       let stateProps = mapStateToProps ? mapStateToProps(store.getState(), this.props) : {}
-      let dispatchProps = mapDispatchToProps ? mapDispatchToProps(store.dispatch, this.props) : {}
+      let dispatchProps = mapDispatchToProps ? mapDispatchToProps(store.dispatch, this.props) : {dispatch: store.dispatch}
       this.setState({
         allProps: {
           ...stateProps,
           ...dispatchProps,
           ...this.props,
-        }
+        },
       })
     }
 
